@@ -34,7 +34,7 @@ public class EventStoreIT {
     @Test(enabled = false)
     public void testAsync() throws Exception {
         // handles result asynchronously
-        this.eventstore.appendToStream("foo", ExpectedVersion.any(), asList(
+        this.eventstore.appendToStream("foo", ExpectedVersion.ANY, asList(
                 EventData.newBuilder().type("bar").jsonData("{ a : 1 }").build(),
                 EventData.newBuilder().type("baz").jsonData("{ b : 2 }").build())
         ).thenAccept(r -> log.info(r.logPosition + ""));
@@ -43,7 +43,7 @@ public class EventStoreIT {
     @Test(enabled = false)
     public void testSync() throws Exception {
         // handles result synchronously
-        this.eventstore.appendToStream("foo", ExpectedVersion.any(), asList(
+        this.eventstore.appendToStream("foo", ExpectedVersion.ANY, asList(
                 EventData.newBuilder().type("bar").jsonData("{ a : 1 }").build(),
                 EventData.newBuilder().type("baz").jsonData("{ b : 2 }").build())
         ).thenAccept(r -> log.info(r.logPosition + "")).get();

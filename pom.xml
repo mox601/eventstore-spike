@@ -15,7 +15,7 @@
         <project.build.resourceEncoding>UTF-8</project.build.resourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 
-        <esjc.version>1.6.0</esjc.version>
+        <esjc.version>1.7.0</esjc.version>
         <jackson-mapper-asl.version>1.9.13</jackson-mapper-asl.version>
         <log4j.version>1.2.17</log4j.version>
         <log4j-api.version>2.7</log4j-api.version>

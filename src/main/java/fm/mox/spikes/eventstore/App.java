@@ -67,14 +67,14 @@ public class App {
         //services
         OrderService orderService = new OrderService(orderRepository);
 
-        //
-        Customer customer = new Customer(customerRepository.nextIdentity(), 100);
+        //use case
+        Customer aCustomer = new Customer(customerRepository.nextIdentity(), 100);
 
-        customerRepository.save(customer);
+        customerRepository.save(aCustomer);
 
-        log.info(customer + "");
+        log.info(aCustomer + "");
 
-        orderService.createOrder(new OrderService.CreateOrderCommand(customer.getId(), 10));
+        orderService.createOrder(new OrderService.CreateOrderCommand(aCustomer.getId(), 10));
 
         try {
             Thread.sleep(10_000);

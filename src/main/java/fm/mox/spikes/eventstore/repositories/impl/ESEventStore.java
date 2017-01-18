@@ -33,7 +33,8 @@ public class ESEventStore implements EventStore {
 
         try {
 
-            ExpectedVersion expectedVersion = (aStartingIdentity.getStreamVersion() - 1) == 0 ? ExpectedVersion.any() : ExpectedVersion.of(aStartingIdentity.getStreamVersion() - 1);
+            ExpectedVersion expectedVersion = (aStartingIdentity.getStreamVersion() - 1) == 0 ?
+                    ExpectedVersion.ANY : ExpectedVersion.of(aStartingIdentity.getStreamVersion() - 1);
 
             WriteResult writeResult = this.eventStore.appendToStream(
                     aStartingIdentity.getStreamName(),
