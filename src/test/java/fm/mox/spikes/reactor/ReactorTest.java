@@ -1,7 +1,7 @@
 package fm.mox.spikes.reactor;
 
 import org.testng.annotations.Test;
-import reactor.core.Cancellation;
+import reactor.core.Disposable;
 import reactor.core.publisher.Flux;
 
 import java.time.Duration;
@@ -20,7 +20,7 @@ public class ReactorTest {
                 .doOnNext(t -> System.out.println("observed " + t.toString()))
                 .map(d -> d * 2)
                 .take(30);
-        final Cancellation subscribe = longFlux.subscribe(System.out::println);
+        final Disposable subscribe = longFlux.subscribe(System.out::println);
         subscribe.dispose();
     }
 
